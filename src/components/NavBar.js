@@ -36,7 +36,7 @@ export default function NavBar(props) {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="basic-navbar-nav justify-content-end">
       <Nav className="main-menu">
-        <Nav.Link className="active" href="#home">Home</Nav.Link>
+        <Nav.Link href="#home">Home</Nav.Link>
         <Nav.Link href="/about">About Us</Nav.Link>
         <Nav.Link href="/event">Event</Nav.Link>
         <Nav.Link href="/post">Blog</Nav.Link>

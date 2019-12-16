@@ -1,88 +1,52 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
-import { Container, Row, Col, Breadcrumb, Navbar } from 'react-bootstrap'
+import { Container, Row, Col, Navbar } from 'react-bootstrap'
 
 
 export default function About() {
     return (
-        <div>
-            <Container>
+		<div>
+			<Container>
                 <Row className="justify-content-md-center">
-                    <Col class="col-md-6 about-content">
-                        <h2>Let's Make the World Better Together</h2>
-                        <p>For God did not send his Son into the world to condemn the world,<br></br> but to save the world through him.</p>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui<br></br> officia dese mollit anim id est laborum. Sed ut perspiciatis<br></br> unde omnis iste.</p>
-                        <a href="" class="site-btn sb-wide">join with us</a>
+					<Col class="xs={6} md={4} about-img1w">
+                        <img src="https://images.unsplash.com/photo-1504439158909-5a2f08876082?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt=""></img>
                     </Col>
-                    <Col class="col-md-6 about-img">
-                        <img src="img/about.jpg" alt=""></img>
+                    <Col class="xs={12} md={8} about-content">
+                        <h2>No one fights cancer alone</h2>
+                        <p>A diagnosis that turns the lives of the entire family upside down.</p>
+                        <p>The objective of The Cancer Voice VietNam is to put a spotlight on the types of cancer that largely affect children, survivorship issues and – importantly – to help raise funds for cure and family support.</p>
+						<h3>Our Mission</h3>
+						<p>We are a group of volunteers who aim to make The Cancer Voice be heard around VietNam.</p>
+						<p>We are fighting together with the children who got cancer.</p>
+                        <a href="" class="site-btn sb-wide">join with us</a>
                     </Col>
                 </Row>
             </Container>
-        </div>
 
-        {/* <!-- Services section -->
-	    <section class="services-section spad">
-			<div class="row">
-				<div class="col-sm-4">
+			<Col class="services-section spad">
+				<Row class="col-sm-4">
 					<div class="service-box">
-						<h4><i class="fa fa-fire"></i>Our Values</h4>
-						<p>Excepteur sint occaecat cupidatat non, <br> sunt in culpa qui officia dese mollit anim id est laborum. Sed ut perspiciatis unde omnis iste.</p>
+						<h4><i class="fa fa-fire"></i>WHAT WE CAN DO TOGETHER?</h4>
+						<p>Excepteur sint occaecat cupidatat non, <br></br> sunt in culpa qui officia dese mollit anim id est laborum. Sed ut perspiciatis unde omnis iste.</p>
 						<a href="#" class="s-readmore">Readmore <i class="fa fa-angle-double-right"></i></a>
 					</div>
-				</div>
+				</Row>
 				<div class="col-sm-4">
 					<div class="service-box">
 						<h4><i class="fa fa-eye"></i>Our Vision</h4>
-						<p>Excepteur sint occaecat cupidatat non, <br> sunt in culpa qui officia dese mollit anim id est laborum. Sed ut perspiciatis unde omnis iste.</p>
+						<p>Excepteur sint occaecat cupidatat non, <br></br> sunt in culpa qui officia dese mollit anim id est laborum. Sed ut perspiciatis unde omnis iste.</p>
 						<a href="#" class="s-readmore">Readmore <i class="fa fa-angle-double-right"></i></a>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="service-box">
 						<h4><i class="fa fa-heart"></i>Our Mission</h4>
-						<p>Excepteur sint occaecat cupidatat non, <br> sunt in culpa qui officia dese mollit anim id est laborum. Sed ut perspiciatis unde omnis iste.</p>
-						<a href="#" class="s-readmore">Readmore <i class="fa fa-angle-double-right"></i></a>
+						<p>Excepteur sint occaecat cupidatat non, <br></br> sunt in culpa qui officia dese mollit anim id est laborum. Sed ut perspiciatis unde omnis iste.</p>
+						<a href="#" class="s-readmore">Readmore<i class="fa fa-angle-double-right"></i></a>
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Services section end -->
+			</Col>
 
-
-	<!-- Event section -->
-	<section class="event-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-5 col-lg-6">
-					<!-- event info -->
-					<div class="event-info">
-						<div class="event-date">
-							<h2>20</h2>
-							may
-						</div>
-						<h3>Sponsor a Child</h3>
-						<p><i class="fa fa-calendar"></i> 8:00 Am — 10:00 Am  <i class="fa fa-map-marker"></i> Central District, Riga, LV-1050, Latvia</p>
-					</div>
-				</div>
-				<div class="col-md-7 col-lg-6">
-					<!-- counter -->
-					<div class="counter">
-						<div class="counter-item"><h4>10</h4>Days</div>
-						<div class="counter-item"><h4>08</h4>hours</div>
-						<div class="counter-item"><h4>40</h4>Mins</div>
-						<div class="counter-item"><h4>56</h4>secs</div>
-					</div>
-					<a href="" class="site-btn sb-light-line">Read more</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Event section end -->
-
-
-	<!-- Pastors section -->
 	<section class="pastors-section spad">
 		<div class="container">
 			<div class="section-title">
@@ -121,8 +85,6 @@ export default function About() {
 			</div>
 		</div>
 	</section>
-	<!-- Pastors section end -->
-
 
 	
 	<section class="newsletter-section">
@@ -133,14 +95,13 @@ export default function About() {
 				</div>
 				<div class="col-sm-8 col-md-5 col-sm-offset-2 col-md-offset-0">
 					<form class="newsletter-form">
-						<input type="email" placeholder="Enter your email">
-						<button class="nl-send-btn">subscribe</button>
+						<input type="email" placeholder="Enter your email"/>>
+						<button class="nl-send-btn">Subscribe</button>
 					</form>
 				</div>
 			</div>
 		</div>
-	</section>
-    <!-- Newsletter section end--> */}
-        </div>
-    );
-}
+		</section> 
+		</div>
+	)
+	}

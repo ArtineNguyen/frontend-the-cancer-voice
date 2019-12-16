@@ -10,6 +10,7 @@ import Event from './pages/Event'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import EditPost from './pages/EditPost';
 import EditEvent from "./pages/EditEvent";
+import About from "./pages/About";
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
         <Route exact path ="/edit/:id/event" render={()=><EditEvent currentUser = {currentUser}/>}/>
         <Route path="/event" render={()=><Event currentUser={currentUser}/>}/>
         <Route path="/upload-post" render={()=> <Post currentUser = {currentUser}/>}/>
+        <Route path="/about/" render ={()=> <About />}/>
       </Switch>
     </div>
   );

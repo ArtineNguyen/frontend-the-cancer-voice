@@ -1,7 +1,7 @@
 import React from 'react'
-import {Nav, NavDropdown, Navbar, Row, Col} from 'react-bootstrap'
+import {Nav, Navbar, Container} from 'react-bootstrap'
 import { useHistory } from 'react-router-dom';
-import Countdown from 'react-countdown-now';
+
 
 export default function NavBar(props) {
   const history = useHistory()
@@ -22,38 +22,31 @@ export default function NavBar(props) {
   };
 
   return (
-    <Navbar className="top-nav-section" expand="lg">
-      <Row>
-        <Col sm className="social">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-google-plus-g"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-        </Col>
-        <Col xs={6} className="counter-top">
-          <h5>Upcoming Event:</h5>
-						<a href="#" class="top-readmore hidden-sm">readmore</a>
-        </Col>
-        <Col>
-        </Col>
-      </Row>
-      {/* <Navbar.Brand href="#home">
-      <img alt="" src="/logo.svg" width="30" height="30" className="d-inline-block align-top" />{' '}
-      The Cancer Voice
-      </Navbar.Brand> */}
-      {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-sm-2">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">About Us</Nav.Link>
-          <Nav.Link href="#link">Event</Nav.Link>
-          <Nav.Link href="#link">Blog</Nav.Link>
-          <Nav.Link href="#link">Donate</Nav.Link>
-          <Nav.Link href="#link">Contact</Nav.Link>
-        </Nav>
-        <Form inline>
-        <Button variant="outline-success">Send Donation</Button>
-      </Navbar.Collapse> */}
-    </Navbar>
-  )
-}
+    <Container>
+    <Navbar collapseOnSelect className="site-logo" variant="light" expand="lg" className="responsive-navbar-nav">
+      <Navbar.Brand className="header-section" href="#home">
+        <img
+          alt=""
+          src="/logo.png"
+          width="180"
+          height="180"
+          className="d-inline-block align-top"
+        />
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse className="basic-navbar-nav justify-content-end">
+      <Nav className="main-menu">
+        <Nav.Link className="active" href="#home">Home</Nav.Link>
+        <Nav.Link href="/about">About Us</Nav.Link>
+        <Nav.Link href="/event">Event</Nav.Link>
+        <Nav.Link href="/post">Blog</Nav.Link>
+        <Nav.Link href="#link">Donate</Nav.Link>
+        <Nav.Link href="/contact">Contact</Nav.Link>
+      </Nav>
+      
+    </Navbar.Collapse>
+  </Navbar>
+
+   </Container>
+  );
+  }

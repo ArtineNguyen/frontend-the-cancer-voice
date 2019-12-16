@@ -9,7 +9,7 @@ import Post from './pages/Post'
 import Event from './pages/Event'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import EditPost from './pages/EditPost';
-import EditEvent from "./pages/EditEvent"
+import EditEvent from "./pages/EditEvent";
 
 
 function App() {
@@ -52,7 +52,7 @@ function App() {
         <Route exact path="/" render={()=> <Home />}/>
         <Route path="/forgot" render={()=> <Forgot/>}/>
         <Route path="/login" render ={()=> <Login setCurrentUser={setCurrentUser}/>}/>
-        {/* <Route path="/post" render ={()}=> <Post/>}/> */}
+        <Route path="/post/" render ={()=> <Post />}/>
         <Route path="/post/edit/:id" render = {()=><EditPost currentUser = {currentUser}/>}/>
         <Route exact path ="/edit/:id/event" render={()=><EditEvent currentUser = {currentUser}/>}/>
         <Route path="/event" render={()=><Event currentUser={currentUser}/>}/>

@@ -20,6 +20,7 @@ export default function Event(props) {
     useEffect(() => {
         getEvent()
     }, [])
+    
     const create_event = async()=>{
         const resp = await fetch(`${process.env.REACT_APP_URL_DATABASE}/event/create-event`,{
             method: "POST",

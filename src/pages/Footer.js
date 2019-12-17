@@ -7,7 +7,7 @@ export default function Footer() {
     <Container className="footer-top-section spad">
 			<Row className="row">
 				<Col className="col-sm-6 footer-top-content">
-					<div class="section-title title-left">
+					<div className="section-title title-left">
 						<h2>Contact Us</h2>
 					</div>
 					<h3>Ho Chi Minh</h3>
@@ -17,12 +17,14 @@ export default function Footer() {
 					<h5>(+84) 081 919 9357</h5>
 				</Col>
 			</Row>
-		<div class="map-area" id="map-canvas"></div>
+		<div className="map-area" id="map-canvas">
+			<img style={{width:"100vw"}} src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80"/>
+		</div>
 	</Container>
 
-	<section class="footer-section">
+	<section className="footer-section">
 			<Row className="row">
-				<Col className="col-sm-6 copyright">
+				<Col className="col-sm-12 copyright">
 					<p>Copyright by Artine Nguyen with passionate</p>
 				</Col>
 			</Row>

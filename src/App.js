@@ -11,6 +11,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import EditPost from './pages/EditPost';
 import EditEvent from "./pages/EditEvent";
 import About from "./pages/About";
+import Contact from './pages/Contact';
+import Single_Post from './pages/Single_Post';
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
     getUser()
     window.history.replaceState({}, document.title, window.location.pathname);
   }, [])
+
+  
   const getUser = async () =>{
     const local = localStorage.getItem("token");
     const accessToken =
@@ -34,11 +38,13 @@ function App() {
           Authorization: `Token ${token}`
         }
     });
+    console.log(resp)
     if (resp.ok){
       const data = await resp.json()
+      console.log("asdasdasdasd",data)
+
       localStorage.setItem('token', token)
       setCurrentUser(data)
-      console.log(data)
     } else {
       localStorage.clear('token')
       setCurrentUser(null)
@@ -53,12 +59,13 @@ function App() {
         <Route exact path="/" render={()=> <Home />}/>
         <Route path="/forgot" render={()=> <Forgot/>}/>
         <Route path="/login" render ={()=> <Login setCurrentUser={setCurrentUser}/>}/>
-        <Route path="/post/" render ={()=> <Post />}/>
         <Route path="/post/edit/:id" render = {()=><EditPost currentUser = {currentUser}/>}/>
         <Route exact path ="/edit/:id/event" render={()=><EditEvent currentUser = {currentUser}/>}/>
         <Route path="/event" render={()=><Event currentUser={currentUser}/>}/>
         <Route path="/upload-post" render={()=> <Post currentUser = {currentUser}/>}/>
         <Route path="/about/" render ={()=> <About />}/>
+        <Route path="/post/:id" render ={()=> <Single_Post />}/>
+        <Route path="/contact/" render ={()=> <Contact />}/>
       </Switch>
     </div>
   );

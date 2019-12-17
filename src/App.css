@@ -301,6 +301,17 @@ input {
 /* Header
 /*----------------------------------------*/
 
+
+.test{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	font-size: large;
+	
+}
+
+
+
 html,
 body {
 	height: 100%;

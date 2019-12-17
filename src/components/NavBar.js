@@ -20,7 +20,7 @@ export default function NavBar(props) {
       alert("Something wrong log out again");
     }
   };
-
+  console.log(props.currentUser)
   return (
     <Container>
     <Navbar collapseOnSelect className="site-logo" variant="light" expand="lg" className="responsive-navbar-nav">
@@ -36,12 +36,15 @@ export default function NavBar(props) {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="basic-navbar-nav justify-content-end">
       <Nav className="main-menu">
-        <Nav.Link href="#home">Home</Nav.Link>
+        <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/about">About Us</Nav.Link>
         <Nav.Link href="/event">Event</Nav.Link>
-        <Nav.Link href="/post">Blog</Nav.Link>
+        <Nav.Link href="/upload-post">Blog</Nav.Link>
         <Nav.Link href="#link">Donate</Nav.Link>
         <Nav.Link href="/contact">Contact</Nav.Link>
+        {props.currentUser ? <Nav.Link onClick={()=>logOut()}>Log Out</Nav.Link> :
+          <Nav.Link href="/login">Login</Nav.Link>
+        }
       </Nav>
       
     </Navbar.Collapse>

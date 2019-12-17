@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Container } from 'react-bootstrap'
 export default function EditEvent(props) {
     const history = useHistory()
     const { id } = useParams()
@@ -58,7 +58,7 @@ export default function EditEvent(props) {
         change()
     }
     return (
-        <div>
+        <Container>
             <Form onSubmit={(e)=>changEvent(e)}>
                 <Form.Group>
                     <Form.Label>Input your Title</Form.Label>
@@ -126,6 +126,6 @@ export default function EditEvent(props) {
                 </Form.Group>
                 <Button type="submit">Change</Button>
             </Form>
-        </div>
+        </Container>
     )
 }

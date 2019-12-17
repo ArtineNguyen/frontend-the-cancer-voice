@@ -25,8 +25,9 @@ export default function Login(props) {
         setVisibleBtn2('hidden')
         setVisibleBtn('visible')
     }
-    const loginUser = async () => {
-        const resp = await fetch(`${process.env.REACT_APP_URL_DATABASE}/login`, {
+    const loginUser = async (e) => {
+        e.preventDefault()
+        const resp = await fetch(`https://127.0.0.1:5000/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -40,6 +41,7 @@ export default function Login(props) {
             const data = await resp.json()
             if (data.success) {
                 localStorage.setItem('token', data.token)
+                props.setCurrentUser(data.user)
                 alert.show("Successfully")
                 history.push("/")
             } else {
@@ -47,9 +49,9 @@ export default function Login(props) {
             }
         }
     }
-
+console.log(process.env.REACT_APP_URL_TEST,"test sssssssssssssssssssssssssssssssssssssssss")
     const signupUser = async () => {
-        const resp = await fetch(`${process.env.REACT_APP_URL_DATABASE}S/register`, {
+        const resp = await fetch(`${process.env.REACT_APP_URL_DATABASE}/register`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
@@ -86,7 +88,7 @@ export default function Login(props) {
                     </label>
                 
                     <Link to="/forgot" className="forgot-pass">Forgot password?</Link>
-                    <button type="submit" className="submit text-center" onClick={loginUser}>Sign In</button>
+                    <button type="submit" className="submit text-center" onClick={(e)=>loginUser(e)}>Sign In</button>
                 <a href={`${process.env.REACT_APP_URL_DATABASE}/loginfacebook/facebook`} className="fb-btn">Join with <span>facebook</span></a>
                     </div>
                 </Form.Group>

@@ -32,11 +32,11 @@ export default function Forgot() {
                 <Col xs={6} md={6}>
                 <Form>
                     <Form.Group onChange={e => setEmail(e.target.value)} onSubmit={(e) => handelSubmit(e)} controlId="formBasicEmail">
-                        <input class="input" type="name" placeholder="Enter your name" />
+                        <input className="input" type="name" placeholder="Enter your name" />
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">
-                        <input class="input" type="email" placeholder="Enter Your Email" />
+                        <input className="input" type="email" placeholder="Enter Your Email" />
                     </Form.Group>
                     <Button className="jutified-center" variant="primary" type="submit">
                         Send New Password

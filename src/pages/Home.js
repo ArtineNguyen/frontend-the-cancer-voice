@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
+import Footer from '../pages/Footer'
 import { Container, Row, Col } from 'react-bootstrap'
 import Countdown from 'react-countdown-now';
 
@@ -52,21 +53,19 @@ export default function Home() {
 		
 		return (
 			<div>
-				<section class="about-section spad">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-6 about-content">
-									<h2>Let's Make the World Better Together</h2>
-									<p>For God did not send his Son into the world to condemn the world, but to save the world through him.</p>
-									<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia dese mollit anim id est laborum. Sed ut perspiciatis unde omnis iste.</p>
+				<Container className="about-section spad">
+					<Row className="row">
+						<Col className="col-md-6 about-content">
+									<h2>No one fights cancer alone</h2>
+									<p>A diagnosis that turns the lives of the entire family upside down.</p>
+									<p>The objective of The Cancer Voice VietNam is to put a spotlight on the types of cancer that largely affect children, survivorship issues and – importantly – to help raise funds for cure and family support.</p>
 									<a href="#" class="site-btn sb-wide">join with us</a>
-								</div>
-								<div class="col-md-6 about-img">
+							</Col>
+							<Col className="col-md-6 about-img">
 									<img src="img/about.jpg" alt=""></img>
-								</div>
-							</div>
-						</div>
-					</section>
+							</Col>
+							</Row>
+					</Container>
 
 
 
@@ -299,15 +298,16 @@ export default function Home() {
 								</div>
 								<div class="col-sm-8 col-md-5 col-sm-offset-2 col-md-offset-0">
 									<form class="newsletter-form">
-										<input type="email" placeholder="Enter your email" />>
+										<input type="email" placeholder="Enter your email" />
 						<button class="nl-send-btn">subscribe</button>
 									</form>
 								</div>
 							</div>
 						</div>
 					</section>
+					<Footer/>
 			</div>
-		)
+			)
 	}
 
 	

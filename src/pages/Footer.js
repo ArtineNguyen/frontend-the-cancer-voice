@@ -1,49 +1,32 @@
 import React from 'react'
+import { Container, Row, Col } from 'react-bootstrap'
 
 export default function Footer() {
     return (
         <div>
-            <section class="footer-top-section spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6 footer-top-content">
+    <Container className="footer-top-section spad">
+			<Row className="row">
+				<Col className="col-sm-6 footer-top-content">
 					<div class="section-title title-left">
 						<h2>Contact Us</h2>
 					</div>
-					<h3>New York, USA</h3>
-					<p>207 Park Avenue New York, NY 90210</p>
-					<p><span>Email:</span> info@colorlib.com</p>
+					<h3>Ho Chi Minh</h3>
+					<p>16 Hung Thai, Phu My W., D.7</p>
+					<p><span>Email:</span> artinenguyen@gmail.com</p>
 					<h4>Phone:</h4>
-					<h5>+1 (409) 987–4567</h5>
-				</div>
-			</div>
-		</div>
-		<!-- googel map -->
+					<h5>(+84) 081 919 9357</h5>
+				</Col>
+			</Row>
 		<div class="map-area" id="map-canvas"></div>
+	</Container>
+
+	<section class="footer-section">
+			<Row className="row">
+				<Col className="col-sm-6 copyright">
+					<p>Copyright by Artine Nguyen with passionate</p>
+				</Col>
+			</Row>
 	</section>
-	<!-- Footer top section end-->
-
-
-	<!-- Footer section -->
-	<footer class="footer-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6 copyright">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-				</div>
-				<div class="col-sm-6">
-					<div class="social">
-						<a href="#"><i class="ti-facebook"></i></a>
-						<a href="#"><i class="ti-twitter-alt"></i></a>
-						<a href="#"><i class="ti-google"></i></a>
-						<a href="#"><i class="ti-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
         </div>
     )
 }

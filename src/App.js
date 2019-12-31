@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Home from './pages/Home'
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {Switch, Route} from 'react-router-dom'
 import Login from './pages/Login'
 import NavBar from './components/NavBar';

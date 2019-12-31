@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import './App.css';
-
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router} from 'react-router-dom'
@@ -10,11 +8,11 @@ import { Provider as AlertProvider } from 'react-alert'
 import Notification from "./components/Notification"
 
 ReactDOM.render(
-    <AlertProvider template={Notification}>
-        <Router>
+    <Router>
+        <AlertProvider template={Notification}>
             <App />
-        </Router>
     </AlertProvider>
+        </Router>
 , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

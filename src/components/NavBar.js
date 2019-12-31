@@ -47,6 +47,7 @@ export default function NavBar(props) {
         <Nav.Link href="/donate">Donate</Nav.Link>
 
       </Navbar>
+      
       </Navbar.Collapse>
       </Container>
     </Navbar>

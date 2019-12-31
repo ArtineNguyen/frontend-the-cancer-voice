@@ -5,16 +5,15 @@
 }
 
 .signIn-Box {
-	margin-top: 200px;
+	margin-top: 30px;
 }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1rem;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
   font-weight: 300;
   line-height: 1.5;
   color: #212529;
-  text-align: left;
   background-color: #f2f2f2; }
 
 [tabindex="-1"]:focus {
@@ -36,7 +35,7 @@ hr {
   padding: 0;
 }
 
-input, button {
+input {
   border: none;
   outline: none;
   background: none;
@@ -77,17 +76,6 @@ input, button {
 .cont.s--signup .sub-cont {
   -webkit-transform: translate3d(-640px, 0, 0);
           transform: translate3d(-640px, 0, 0);
-}
-
-button {
-  display: block;
-  margin: 0 auto;
-  width: 260px;
-  height: 36px;
-  border-radius: 30px;
-  color: #fff;
-  font-size: 15px;
-  cursor: pointer;
 }
 
 .img {
@@ -319,13 +307,6 @@ input {
 	
 }
 
-html,
-body {
-	height: 100%;
-	font-family: "Open Sans", sans-serif;
-	background-color: red;
-}
-
 h1 {
 	font-size: 60px;
 }
@@ -512,46 +493,32 @@ ol {
 	Header section
 -----------------------*/
 
-
-.header-section {
-	padding: 20px 0 0 0;
-	position: relative;
-}
-
-.header-section .site-btn {
-	float: right;
-	margin-left: 100px;
-}
-
 .site-logo {
-	display: inline-block;
 	margin-right: 50px;
 	padding-top: 5px;
 }
-
-.main-menu {
-	display: inline-block;
-	padding-top: 5px;
-}
-
 
 .main-menu{
 	text-transform: uppercase;
 	font-weight: 350;
 	font-size: 14px;
-	color: #252525;
-	margin-left: 30px;
-	padding: 30px;
 	-webkit-transition: all 0.8s;
 	-o-transition: all 0.8s;
 	transition: all 0.8s;
 }
 
+.main-menu a {
+	color: #252525;
+	padding-top: 5px;
+}
+
 .main-menu :hover {
+	font-weight: 450;
 	color: #F8985B;
 }
 
 .main-menu.active a {
+	font-weight: 450;
 	color: #F8985B;
 }
 

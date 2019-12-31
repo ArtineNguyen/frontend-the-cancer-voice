@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Home from './pages/Home'
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import './App.css'
+
 import {Switch, Route} from 'react-router-dom'
 import Login from './pages/Login'
 import NavBar from './components/NavBar';
@@ -13,6 +12,9 @@ import EditEvent from "./pages/EditEvent";
 import About from "./pages/About";
 import Contact from './pages/Contact';
 import Single_Post from './pages/Single_Post';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 //v1
 
 function App() {

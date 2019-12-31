@@ -30,7 +30,7 @@ export default function Single_Post() {
 
     const handleOnSubmit = async (e) => {
         e.preventDefault()
-        const res = await fetch(`https://127.0.0.1:5000/post/single-post/${id}/comment`, {
+        const res = await fetch(`${process.env.REACT_APP_URL_DATABASE}/post/single-post/${id}/comment`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

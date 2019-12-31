@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 
-export default function ControlledCarousel() {
+export default function Slidebar() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(null);
 

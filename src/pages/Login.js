@@ -25,6 +25,7 @@ export default function Login(props) {
         setVisibleBtn2('hidden')
         setVisibleBtn('visible')
     }
+    console.log(process.env.REACT_APP_URL_DATABASE)
     const loginUser = async (e) => {
         e.preventDefault()
         const resp = await fetch(`${process.env.REACT_APP_URL_DATABASE}/login`, {

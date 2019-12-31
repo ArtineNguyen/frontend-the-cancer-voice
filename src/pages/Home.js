@@ -1,6 +1,5 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
-import Slidebar from '../components/Slidebar'
 import AboutUs from '../components/AboutUs'
 import Footer from '../pages/Footer'
 import About from '../pages/About'
@@ -68,7 +67,6 @@ export default function Home(props) {
 
 	return (
 		<>
-			<Slidebar />
 			<AboutUs />
 			<Blog/>
 			<Countdown/>

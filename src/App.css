@@ -323,6 +323,7 @@ html,
 body {
 	height: 100%;
 	font-family: "Open Sans", sans-serif;
+	background-color: red;
 }
 
 h1 {
@@ -507,19 +508,10 @@ ol {
 	background-position: center 0;
 }
 
-/*---------------------
+/* /*---------------------
 	Header section
 -----------------------*/
 
-.navBar{
-	background-color: rgb(255, 255, 255, 0.5);
-	/* background-color: tomato; */
-	transition: 0.4s;
-	width: 100%;
-	top: 0;
-	width: 100%;
-	z-index: 99;
-}
 
 .header-section {
 	padding: 20px 0 0 0;

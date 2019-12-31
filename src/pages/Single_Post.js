@@ -4,11 +4,12 @@ import Footer from './Footer'
 import { Container, Row, Col } from 'react-bootstrap'
 import Countdown from 'react-countdown-now';
 import { useParams } from 'react-router-dom'
-
+import Comment from "../components/comment"
 
 export default function Single_Post() {
     const { id } = useParams()
     const [post, setPost] = useState({})
+    const [commentInput, setCommentInput] = useState({})
     const getPost = async () => {
         const resp = await fetch(`${process.env.REACT_APP_URL_DATABASE}/post/single-post/${id}`, {
             headers: {
@@ -20,6 +21,29 @@ export default function Single_Post() {
             setPost(data)
         }
     }
+
+    const handleOnChange = (e) => {
+        e.preventDefault()
+        console.log(commentInput)
+        setCommentInput({...commentInput, [e.target.name]: e.target.value})
+    }
+
+    const handleOnSubmit = async (e) => {
+        e.preventDefault()
+        const res = await fetch(`https://127.0.0.1:5000/post/single-post/${id}/comment`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Token ${localStorage.getItem("token")}`
+            },
+            body: JSON.stringify(commentInput)
+        })
+        const data = await res.json()
+        if(data.status === "OK"){
+            getPost()
+        }
+    }
+
     useEffect(() => {
         getPost()
     }, [])
@@ -35,11 +59,22 @@ export default function Single_Post() {
                             <Row className="blog-item">
                                 <div className="bi-thumb set-bg" data-setbg="larm-rmah-AEaTUnvneik-unsplash.jpg"></div>
                                 <div className="bi-content">
-                                    <div className="date">On Sunday 15 May, 2020</div>
+                                    <div className="date">{post.created_at}</div>
                                     <h4>{post.title}</h4>
                                     <p>{post.body}</p>
                                     <img src={post.image_url}/>
+                                    <p></p>
                                 </div>
+                            </Row>
+                            <Row className="blog-comment">
+                                <form className="w-100" onChange={handleOnChange} onSubmit={handleOnSubmit}>
+                                    <input name="content" placeholder="Put your content here..."></input>
+                                </form>
+                            </Row>
+                            <Row className="d-flex flex-column justify-content-center align-items-center p-2">
+                                {post.comments && post.comments.map((comment) => {
+                                    return <Comment content={comment} />
+                                })}
                             </Row>
                         </Container>
                     </Row>

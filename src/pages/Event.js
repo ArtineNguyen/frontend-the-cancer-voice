@@ -228,7 +228,7 @@ export default function Event(props) {
 				<p>Page 1 of 08 results</p>
 			</div>
 	    </Container>
-        <Container>
+        {props.currentUser ? <><Container>
             <Form onSubmit={(e)=> handleSubmit(e)}>
 
                 <Container>
@@ -242,7 +242,7 @@ export default function Event(props) {
                 </Col> */}
                 </Container>
                 
-                {/* <Form.Group>
+                <Form.Group>
                     <Form.Label>Input Title</Form.Label>
                     <Form.Control className="input"
                         type="text"
@@ -251,7 +251,7 @@ export default function Event(props) {
                 </Form.Group>                
                 <Form.Group>
                     <Form.Label>Input body</Form.Label>
-                    <Form.Control className="input"
+                    <Form.Control className="input" as="textarea" rows="5"
                         type="text"
                         onChange={(e) => setbody(e.target.value)}
                     />
@@ -263,44 +263,44 @@ export default function Event(props) {
                         onChange={(e) => setImg(e.target.value)}
                     />
                 </Form.Group>
-                <Form.Group>
+                <Form.Group as={Col}>
                     <Form.Label>Input year</Form.Label>
-                    <Form.Control className="input"
+                    <Form.Control className="input" as="time"
                         type="number"
                         onChange={(e) => setYear(e.target.value)}
                     />
                 </Form.Group>
-                <Form.Group>
-                    <Form.Label>Input month</Form.Label>
+                <Form.Group as={Col}>
+                    <Form.Label as={Col}>Input month</Form.Label>
                     <Form.Control className="input"
                         type="number"
                         onChange={(e) => setMonth(e.target.value)}
                     />
                 </Form.Group>
-                <Form.Group>
-                    <Form.Label>Input day</Form.Label>
+                <Form.Group as={Col}>
+                    <Form.Label >Input day</Form.Label>
                     <Form.Control className="input"
                         type="number"
                         onChange={(e) => setDay(e.target.value)}
                     />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Input hour</Form.Label>
+                    <Form.Label as={Col}>Input hour</Form.Label>
                     <Form.Control className="input"
                         type="number"
                         onChange={(e) => setHour(e.target.value)}
                     />
                 </Form.Group>
-                <Form.Group>
-                    <Form.Label>Input minute</Form.Label>
+                <Form.Group >
                     <Form.Control className="input"
                         type="number"
                         onChange={(e) => setMinute(e.target.value)}
                     />
                 </Form.Group>
-                <Button type="submit">Post</Button>*/}
+                <Button type="submit">Post</Button>
             </Form>
             </Container>
+        </> : ""}
             {renderEvent}
         </div>
     )

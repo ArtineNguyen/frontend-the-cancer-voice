@@ -12,7 +12,8 @@ export default function Post(props) {
     // if (!currentUser) history.pushState('/')
     useEffect(() => {
         getPost()
-    }, [])  
+    }, [])
+    console.log(post, "post")
     const create_post = async () => {
         const resp = await fetch(`${process.env.REACT_APP_URL_DATABASE}/post/create`, {
             method: "POST",
@@ -47,138 +48,80 @@ export default function Post(props) {
             setPost(data)
         }
     }
-    const renderPost = post.map(post => {
-        return (
-            <>
-                <Link to ={`/post/${post.id}`}><h1>{post.title}</h1></Link>
-                <img src={post.image} />
-                <h2>{post.body}</h2>
-                {props.currentUser && props.currentUser.id == post.user_id ? (<>
-        <Button onClick={()=> deletePost(post.id)}>Delete</Button>
-        <Link to={`/post/edit/${post.id}`}>Edit Post</Link>            
-                </>) : ""}
-            </>
-        )
-    })
-    const deletePost = async(id) => {
-        const resp = await fetch(`${process.env.REACT_APP_URL_DATABASE}/post/delete/${id}`,{
-        method: 'DELETE',    
-        headers:{
+    const renderPost = () => {
+        return post.map(post => {
+            return (
+                <>
+                    <Col className="col-sm-4">
+                        <div className="blog-item">
+                            <div className="bi-thumb set-bg" style={{backgroundImage: `url(${post.image})`}}></div>
+                            <div className="bi-content">
+                                <div className="date">{post.created_at}</div>
+                                <Link to={`/post/${post.id}`}><h4>{post.title}</h4></Link>
+                                <div className="bi-author">by <span><strong>{post.user_id && post.user_id.name}</strong></span></div>
+                                <div><p>{post.view_count}</p></div>
+                            </div>
+                        </div>
+                        variant="light"
+                    </Col>
+                    {props.currentUser && props.currentUser.id == post.user_id ? (<>
+                        <Button onClick={() => deletePost(post.id)}>Delete</Button>
+                        <Link to={`/post/edit/${post.id}`}>Edit Post</Link>
+                    </>) : ""}
+                </>
+            )
+        })
+    }
+    const deletePost = async (id) => {
+        const resp = await fetch(`${process.env.REACT_APP_URL_DATABASE}/post/delete/${id}`, {
+            method: 'DELETE',
+            headers: {
                 Authorization: localStorage.getItem('token'),
                 "Content-Type": "application/json",
             }
         })
         if (resp.ok) getPost()
     }
+    const commentPost = async (id) => {
+
+    }
     return (
         <Container className="blog-section blog-page spad">
             <div className="section-title">
-                        <span>Experience God's Presence</span>
-                        <h2>LATEST NEWS</h2>
-                    </div>
-                    <Row className="row">
-                        <Col className="col-sm-4">
-                            <div className="blog-item">
-                                <div className="bi-thumb set-bg" data-setbg="img/blog/1.jpg"></div>
-                                <div className="bi-content">
-                                    <div className="date">On Monday 22 May, 2020</div>
-                                    <Link to="/post/8"><h4>Give To End Childhood illnesses</h4></Link>
-                                    <div className="bi-author">by <a href="#">Sofia Joelsson</a></div>
-                                    <a href="#" className="bi-cata">Hope & Faithful</a>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col className="col-sm-4">
-                            <div className="blog-item">
-                                <div className="bi-thumb set-bg" data-setbg="img/blog/2.jpg"></div>
-                                <div className="bi-content">
-                                    <div className="date">On Monday 15 May, 2020</div>
-                                    <h4><a href="single-blog.html">Meet Our 2018 Patient Ambassadors</a></h4>
-                                    <div className="bi-author">by <a href="#">Sofia Joelsson</a></div>
-                                    <a href="#" className="bi-cata">color Story</a>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col className="col-sm-4">
-                            <div className="blog-item">
-                                <div className="bi-thumb set-bg" data-setbg="img/blog/3.jpg"></div>
-                                <div className="bi-content">
-                                    <div className="date">On Monday 13 May, 2018</div>
-                                    <h4><a href="single-blog.html">Why We Give Back To Children's Colorado</a></h4>
-                                    <div className="bi-author">by <a href="#">Sofia Joelsson</a></div>
-                                    <a href="#" className="bi-cata">Sermon & Pray</a>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col className="col-sm-4">
-                            <div className="blog-item">
-                                <div className="bi-thumb set-bg" data-setbg="img/blog/4.jpg"></div>
-                                <div className="bi-content">
-                                    <div className="date">On Monday 13 May, 2018</div>
-                                    <h4><a href="single-blog.html">Give To End Childhood illnesses</a></h4>
-                                    <div className="bi-author">by <a href="#">Sofia Joelsson</a></div>
-                                    <a href="#" className="bi-cata">Hope & Faithful</a>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col className="col-sm-4">
-                            <div className="blog-item">
-                                <div className="bi-thumb set-bg" data-setbg="img/blog/5.jpg"></div>
-                                <div className="bi-content">
-                                    <div className="date">On Monday 28 May, 2021</div>
-                                    <h4><a href="single-blog.html">Meet Our 2018 Patient Ambassadors</a></h4>
-                                    <div className="bi-author">by <a href="#">Sofia Joelsson</a></div>
-                                    <a href="#" className="bi-cata">color Story</a>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col className="col-sm-4">
-                            <div className="blog-item">
-                                <div className="bi-thumb set-bg" data-setbg="img/blog/6.jpg"></div>
-                                <div className="bi-content">
-                                    <div className="date">On Monday 01 May, 2022</div>
-                                    <h4><a href="single-blog.html">Why We Give Back To Children's Colorado</a></h4>
-                                    <div className="bi-author"> by <a href="#">Sofia Joelsson</a></div>
-                                    <a href="#" className="bi-cata">Sermon & Pray</a>
-                                </div>
-                            </div>
-                        </Col>
+                <span>Experience God's Presence</span>
+                <h2>LATEST NEWS</h2>
+            </div>
 
-                    <Col className="pagination-area">
-                        <ul className="pageination-list">
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">Next <i className="fa fa-angle-double-right"></i></a></li>
-                        </ul>
-                        <p>Page 1 of 08 results</p>
-                    </Col>
-                </Row>
-                {props.currentUser ? <> <Form onSubmit={(p) => handleSubmit(p)}>
-                <Form.Group>
-                    <Form.Label>Input Title</Form.Label>
-                    <Form.Control className="input"
-                        type="text"
-                        onChange={(p) => setTitle(p.target.value)}
-                    />
-                 </Form.Group>
-                <Form.Group>
-                    <Form.Label>Input body</Form.Label>
-                    <Form.Control className="input"
-                        type="text"
-                        onChange={(p) => setbody(p.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Input image URL</Form.Label>
-                    <Form.Control className="input"
-                        type="url"
-                        onChange={(p) => setImg(p.target.value)}
-                    />
-                </Form.Group>
-                <Button type="submit">Post</Button> 
+            <Row className="row">
+                
+                {renderPost()}
+            </Row>
+            {props.currentUser ? <> <Form onSubmit={(p) => handleSubmit(p)}>
+                <div className="col align-self-center">
+                    <Form.Group>
+                        <Form.Label>Input Title</Form.Label>
+                        <Form.Control className="input"
+                            type="text"
+                            onChange={(p) => setTitle(p.target.value)}
+                        />
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Input body</Form.Label>
+                        <Form.Control className="input" as="textarea" rows="10" type="text" onChange={(p) => setbody(p.target.value)}
+                        />
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Input image URL</Form.Label>
+                        <Form.Control className="input"
+                            type="url"
+                            onChange={(p) => setImg(p.target.value)}
+                        />
+                    </Form.Group>
+                    <Button type="submit">Post</Button>
+                </div>
             </Form></> : ""}
-            {renderPost}
+            
+
         </Container>
     )
 }

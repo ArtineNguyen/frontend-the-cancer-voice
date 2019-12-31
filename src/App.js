@@ -24,8 +24,7 @@ function App() {
     window.history.replaceState({}, document.title, window.location.pathname);
   }, [])
 
-  
-  const getUser = async () =>{
+    const getUser = async () =>{
     const local = localStorage.getItem("token");
     const accessToken =
     window.location.search.split("=")[0] === "?api_key"
@@ -52,6 +51,10 @@ function App() {
     setLoaded(true)
   }
   // if (!loaded) return <h1>loading</h1>
+  
+
+
+  
   return (
     <div className="App">
       <NavBar currentUser = {currentUser} setCurrentUser = {setCurrentUser}/>

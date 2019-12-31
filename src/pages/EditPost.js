@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
-import { resolve } from 'dns'
 export default function EditPost(props) {
     const history = useHistory()
     const { id } = useParams()
@@ -39,7 +38,7 @@ const editPost= async()=>{
         body: JSON.stringify({
             "title" : title,
             "body": body,
-            "img": img
+            "img": img 
         })
     })
     if (resp.ok) history.goBack()

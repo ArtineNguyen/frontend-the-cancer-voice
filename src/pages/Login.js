@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { useAlert } from "react-alert"
-import { Form } from 'react-bootstrap'
+import { Form, Container } from 'react-bootstrap'
 
 export default function Login(props) {
     const [effect, seteffect] = useState('cont')
@@ -71,7 +71,7 @@ console.log(process.env.REACT_APP_URL_TEST,"test sssssssssssssssssssssssssssssss
     if (props.currentUser) history.push('/')
     console.log(email, password)
     return (
-        <div>
+        <Container className="signIn-Box">
             <Form className={effect} >
                 <Form.Group className="form sign-in text-centers">
                 
@@ -132,6 +132,6 @@ console.log(process.env.REACT_APP_URL_TEST,"test sssssssssssssssssssssssssssssss
                     </div>
                 </div>
             </Form>
-        </div>
+        </Container>
     )
 }

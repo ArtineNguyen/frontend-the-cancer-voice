@@ -7,7 +7,6 @@ import NavBar from './components/NavBar';
 import Forgot from './pages/Forgot';
 import Post from './pages/Post'
 import Event from './pages/Event'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import EditPost from './pages/EditPost';
 import EditEvent from "./pages/EditEvent";
 import About from "./pages/About";

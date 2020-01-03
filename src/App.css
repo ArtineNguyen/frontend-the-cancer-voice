@@ -200,7 +200,7 @@ input {
 
 h2 {
   width: 100%;
-  font-size: 26px;
+  font-size: 24px;
   text-align: center;
 }
 
@@ -297,7 +297,24 @@ input {
 /*----------------------------------------*/
 /* Header
 /*----------------------------------------*/
+.alert button {
+	line-height: 0.7;
+}
 
+.alert {
+    position: fixed;
+    z-index: 998;
+    right: 36vw;
+    top: 4vw;
+}
+
+.alert-heading{
+
+	padding-right: 50px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  	font-size: 14px;
+  	font-weight: 350;
+}
 
 .test{
 	display: flex;
@@ -309,11 +326,6 @@ input {
 
 h1 {
 	font-size: 60px;
-}
-
-h2 {
-	font-size: 36px;
-	line-height: 1.2;
 }
 
 h3 {
@@ -461,13 +473,9 @@ ol {
 	margin-bottom: 70px;
 }
 
-.section-title.title-left {
-	text-align: left;
-}
-
 .section-title span {
 	font-size: 16px;
-	font-weight: 700;
+	font-weight: 500;
 	color: #F8985B;
 	margin-bottom: 10px;
 	display: block;
@@ -492,10 +500,32 @@ ol {
 /* /*---------------------
 	Header section
 -----------------------*/
+.navbar-collapse{
+	display: block;
+}
 
-.site-logo {
-	margin-right: 50px;
-	padding-top: 5px;
+.nav-link .dropdown {
+    color:#252525;
+    background-color: none;
+    border-color: none;
+}
+
+.navbar-light .navbar-toggler {
+    color: rgba(0,0,0,.5);
+	border: none;
+}
+
+.nav-link > i {
+	padding: 10px;
+}
+
+.nav-link > i {
+	display: inline;
+}
+
+
+.about-section {
+	padding-top: 0px;
 }
 
 .main-menu{
@@ -520,35 +550,6 @@ ol {
 .main-menu.active a {
 	font-weight: 450;
 	color: #F8985B;
-}
-
-/*---------------------
-	SlideBar Section
------------------------*/
-.hero-content {
-	width: 100%;
-	margin-top: 180px;
-	display: table;
-	text-align: center;
-	z-index: 2;
-}
-
-.hero-content .hc-inner {
-	display: table-cell;
-	vertical-align: middle;
-}
-
-.hero-content h2 {
-	font-size: 70px;
-	font-weight: 700;
-	color: #fff;
-	margin-bottom: 20px;
-}
-
-.hero-content p {
-	font-size: 18px;
-	color: #fff;
-	margin-bottom: 40px;
 }
 
 /*---------------------
@@ -712,7 +713,7 @@ ol {
 	background: #f5f5f5;
 	color: #000;
 	padding: 8px 0;
-	font-weight: 700;
+	font-weight: 600;
 	margin-bottom: 5px;
 	border-radius: 4px 4px 0 0;
 }

@@ -86,19 +86,21 @@ export default function Post(props) {
 
     }
     return (
+        <>
         <Container className="blog-section blog-page spad">
             <div className="section-title">
                 <span>Experience God's Presence</span>
                 <h2>LATEST NEWS</h2>
             </div>
 
-            <Row className="row">
-                
+            <Row>
                 {renderPost()}
             </Row>
+        </Container>
+            <Container>
             {props.currentUser ? <> <Form onSubmit={(p) => handleSubmit(p)}>
                 <div className="col align-self-center">
-                    <Form.Group>
+                    <Form.Group md={12}>
                         <Form.Label>Input Title</Form.Label>
                         <Form.Control className="input"
                             type="text"
@@ -119,9 +121,10 @@ export default function Post(props) {
                     </Form.Group>
                     <Button type="submit">Post</Button>
                 </div>
+                
             </Form></> : ""}
             
-
         </Container>
+        </>
     )
 }

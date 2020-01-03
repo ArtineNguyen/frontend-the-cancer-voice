@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { useAlert } from "react-alert"
-import { Form, Container } from 'react-bootstrap'
+import { Form, Container, Button } from 'react-bootstrap'
+import Alert from 'react-bootstrap/Alert'
 
 export default function Login(props) {
     const [effect, seteffect] = useState('cont')
@@ -10,8 +11,8 @@ export default function Login(props) {
     const [visibleBtn2, setVisibleBtn2] = useState('hidden')
     const [state, setState] = useState('')
     const history = useHistory()
-    const alert = useAlert()
-
+    const [show, setShow] = useState(false);
+    const [alertcontent, setAlertcontent] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [name, setName] = useState('')
@@ -43,14 +44,14 @@ export default function Login(props) {
             if (data.success) {
                 localStorage.setItem('token', data.token)
                 props.setCurrentUser(data.user)
-                alert.show("Successfully")
                 history.push("/")
             } else {
-                alert.show("Didnt work")
+                setAlertcontent("Wrong password or email")
+                setShow(true)
             }
         }
     }
-console.log(process.env.REACT_APP_URL_TEST,"test sssssssssssssssssssssssssssssssssssssssss")
+    console.log(process.env.REACT_APP_URL_TEST, "test")
     const signupUser = async () => {
         const resp = await fetch(`${process.env.REACT_APP_URL_DATABASE}/register`, {
             method: 'POST',
@@ -72,67 +73,75 @@ console.log(process.env.REACT_APP_URL_TEST,"test sssssssssssssssssssssssssssssss
     if (props.currentUser) history.push('/')
     console.log(email, password)
     return (
-        <Container className="signIn-Box">
-            <Form className={effect} >
-                <Form.Group className="form sign-in text-centers">
-                
-                    <h2>Welcome to The Cancer Voice</h2>
-                    <div className="email-password">
-                    <Form.Label>
-                        <span>Email</span>
-                        <input type="email" onChange={(e) => { setEmail(e.target.value) }} />
-                    </Form.Label>
+        <>
+            {show &&
+                <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+                    <Alert.Heading>{alertcontent}</Alert.Heading>
+                </Alert>
+            }
+            <Container className="signIn-Box">
 
-                    <label>
-                        <span>Password</span>
-                        <input type="password" onChange={(e) => { setPassword(e.target.value) }} />
-                    </label>
-                
-                    <Link to="/forgot" className="forgot-pass">Forgot password?</Link>
-                    <button type="submit" className="submit text-center" onClick={(e)=>loginUser(e)}>Sign In</button>
-                <a href={`${process.env.REACT_APP_URL_DATABASE}/loginfacebook/facebook`} className="fb-btn">Join with <span>facebook</span></a>
-                    </div>
-                </Form.Group>
-                <div className="sub-cont">
-                    <div className="img">
-                        <div className="img__text m--up">
-                            <h2>New here?</h2>
-                            <p>Sign up and discover great amount of new opportunities!</p>
-                        </div>
-                        <div className="img__text m--in">
-                            <h2>One of us?</h2>
-                            <p>If you already has an account, just sign in. We've missed you!</p>
-                        </div>
-                        <div className="img__btn" style={{ visibility: visibleBtn }} onClick={() => { changeEffect() }}>
-                            <span className="m--up" >Sign Up</span>
+                <Form className={effect} >
+                    <Form.Group className="form sign-in text-centers">
 
-                        </div>
-                        <div className="img__btn" onClick={() => { changeEffect2() }} style={{ visibility: visibleBtn2 }}>
-                            <span className="m--in" >Sign In</span></div>
-                    </div>
-                    <div className="form sign-up">
-                        <h2>Time to feel like home,</h2>
+                        <h2>Welcome to The Cancer Voice</h2>
                         <div className="email-password">
+                            <Form.Label>
+                                <span>Email</span>
+                                <input type="email" onChange={(e) => { setEmail(e.target.value) }} />
+                            </Form.Label>
 
-                        <label>
-                            <span>Name</span>
-                            <input type="text" onChange={(e) => setName(e.target.value)} />
-                        </label>
-                        <label>
-                            <span>Email</span>
-                            <input type="email" onChange={(e) => { setEmail(e.target.value) }} />
-                        </label>
-                        <label>
-                            <span>Password</span>
-                            <input type="password" onChange={(e) => setPassword(e.target.value)} />
-                        </label>
-                        <button type="submit" className="submit" onClick={() => signupUser()}>Sign Up</button>
-                        <p>{state}</p>
-                        <a href={`${process.env.REACT_APP_URL_DATABASE}/loginfacebook/facebook`} className="fb-btn">Join with <span>facebook</span></a>
+                            <label>
+                                <span>Password</span>
+                                <input type="password" onChange={(e) => { setPassword(e.target.value) }} />
+                            </label>
+
+                            <Link to="/forgot" className="forgot-pass">Forgot password?</Link>
+                            <button type="submit" className="submit text-center" onClick={(e) => loginUser(e)}>Sign In</button>
+                            <a href={`${process.env.REACT_APP_URL_DATABASE}/loginfacebook/facebook`} className="fb-btn">Join with <span>facebook</span></a>
+                        </div>
+                    </Form.Group>
+                    <div className="sub-cont">
+                        <div className="img">
+                            <div className="img__text m--up">
+                                <h2>New here?</h2>
+                                <p>Sign up and discover great amount of new opportunities!</p>
+                            </div>
+                            <div className="img__text m--in">
+                                <h2>One of us?</h2>
+                                <p>If you already has an account, just sign in. We've missed you!</p>
+                            </div>
+                            <div className="img__btn" style={{ visibility: visibleBtn }} onClick={() => { changeEffect() }}>
+                                <span className="m--up" >Sign Up</span>
+
+                            </div>
+                            <div className="img__btn" onClick={() => { changeEffect2() }} style={{ visibility: visibleBtn2 }}>
+                                <span className="m--in" >Sign In</span></div>
+                        </div>
+                        <div className="form sign-up">
+                            <h2>Time to feel like home,</h2>
+                            <div className="email-password">
+
+                                <label>
+                                    <span>Name</span>
+                                    <input type="text" onChange={(e) => setName(e.target.value)} />
+                                </label>
+                                <label>
+                                    <span>Email</span>
+                                    <input type="email" onChange={(e) => { setEmail(e.target.value) }} />
+                                </label>
+                                <label>
+                                    <span>Password</span>
+                                    <input type="password" onChange={(e) => setPassword(e.target.value)} />
+                                </label>
+                                <button type="submit" className="submit" onClick={() => signupUser()}>Sign Up</button>
+                                <p>{state}</p>
+                                <a href={`${process.env.REACT_APP_URL_DATABASE}/loginfacebook/facebook`} className="fb-btn">Join with <span>facebook</span></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </Form>
-        </Container>
+                </Form>
+            </Container>
+        </>
     )
 }

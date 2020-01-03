@@ -76,15 +76,6 @@ export default function Blog() {
                             </div>
                         </Col>
 
-                    <Col className="pagination-area">
-                        <ul className="pageination-list">
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">Next <i className="fa fa-angle-double-right"></i></a></li>
-                        </ul>
-                        <p>Page 1 of 08 results</p>
-                    </Col>
                 </Row>
             </Container>
             );

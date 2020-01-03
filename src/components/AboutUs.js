@@ -1,10 +1,15 @@
 import React from 'react'
 import {Container, Col, Row} from 'react-bootstrap'
+import ImageSlider from "./ImageSlide"
 
 export default function AboutUs() {
     return (
             <Container className="about-section spad">
 				<Row className="row">
+					<ImageSlider />
+				</Row>
+				
+				<Row>
 					<Col className="col-md-6 about-content">
 						<h2>No one fights cancer alone</h2>
 						<p>A diagnosis that turns the lives of the entire family upside down.</p>

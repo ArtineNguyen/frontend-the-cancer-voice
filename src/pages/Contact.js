@@ -10,7 +10,7 @@ export default function Contact() {
 						<div className="section-title title-left">
 							<h2>Contact Us</h2>
 						</div>
-						<h3>Ho Chi Minh</h3>
+						<h3><i class="fas fa-map-marked-alt"></i>Ho Chi Minh</h3>
 						<p>16 Hung Thai, Phu My W., D.7</p>
 						<p><span>Email:</span> artinenguyen@gmail.com</p>
 						<h4>Phone:</h4>

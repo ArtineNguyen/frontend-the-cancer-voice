@@ -86,14 +86,14 @@ export default function Login(props) {
 
                         <h2>Welcome to The Cancer Voice</h2>
                         <div className="email-password">
-                            <Form.Label>
+                            <label>
                                 <span>Email</span>
-                                <input type="email" onChange={(e) => { setEmail(e.target.value) }} />
-                            </Form.Label>
+                                <input type="email" onChange={(e) => { setEmail(e.target.value) }} style={{width: "260px"}}/>
+                            </label>
 
                             <label>
                                 <span>Password</span>
-                                <input type="password" onChange={(e) => { setPassword(e.target.value) }} />
+                                <input type="password" onChange={(e) => { setPassword(e.target.value) }} style={{width: "260px"}}/>
                             </label>
 
                             <Link to="/forgot" className="forgot-pass">Forgot password?</Link>
@@ -124,15 +124,15 @@ export default function Login(props) {
 
                                 <label>
                                     <span>Name</span>
-                                    <input type="text" onChange={(e) => setName(e.target.value)} />
+                                    <input type="text" onChange={(e) => setName(e.target.value)} style={{width: "260px"}}/>
                                 </label>
                                 <label>
                                     <span>Email</span>
-                                    <input type="email" onChange={(e) => { setEmail(e.target.value) }} />
+                                    <input type="email" onChange={(e) => { setEmail(e.target.value) }} style={{width: "260px"}}/>
                                 </label>
                                 <label>
                                     <span>Password</span>
-                                    <input type="password" onChange={(e) => setPassword(e.target.value)} />
+                                    <input type="password" onChange={(e) => setPassword(e.target.value)} style={{width: "260px"}}/>
                                 </label>
                                 <button type="submit" className="submit" onClick={() => signupUser()}>Sign Up</button>
                                 <p>{state}</p>

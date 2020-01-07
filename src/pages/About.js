@@ -28,21 +28,21 @@ export default function About() {
 					<div className="service-box">
 						<h4><i className="fa fa-fire"></i>What can we do together</h4>
 						<p>Be a volunteer.<br></br> No one should fight cancer alone.</p>
-						<a href="#" className="s-readmore">Readmore <i className="fa fa-angle-double-right"></i></a>
+						{/* <a href="#" className="s-readmore">Readmore <i className="fa fa-angle-double-right"></i></a> */}
 					</div>
 				</Col>
 				<Col className="col-sm-4">
 					<div className="service-box">
-						<h4><i className="fa fa-eye"></i><i className="fa fa-eye"></i>Our Vision</h4>
+						<h4><i className="fa fa-eye"></i>Our Vision</h4>
 						<p>Together we can make a difference</p>
-						<a href="#" className="s-readmore">Readmore <i className="fa fa-angle-double-right"></i></a>
+						{/* <a href="#" className="s-readmore">Readmore <i className="fa fa-angle-double-right"></i></a> */}
 					</div>
 				</Col>
 				<Col className="col-sm-4">
 					<div className="service-box">
 						<h4><i className="fa fa-heart"></i>Be the sponsor</h4>
 						<p>To educate every Vietnamese Family</p>
-						<a href="#" className="s-readmore">Readmore<i className="fa fa-angle-double-right"></i></a>
+						{/* <a href="#" className="s-readmore">Readmore<i className="fa fa-angle-double-right"></i></a> */}
 					</div>
 				</Col>
 			</Row>
@@ -57,28 +57,28 @@ export default function About() {
 			<div className="row">
 				<div className="col-sm-6 col-md-3">
 					<div className="pastor">
-						<div className="pastor-img set-bg" data-setbg="img/pastors/1.jpg"></div>
+						<img className="pastor-img set-bg" src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"/>
 						<h3>Cielo</h3>
 						<p>Founders Corporate</p>
 					</div>
 				</div>
 				<div className="col-sm-6 col-md-3">
 					<div className="pastor">
-						<div className="pastor-img set-bg" data-setbg="img/pastors/2.jpg"></div>
+					<img className="pastor-img set-bg" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"/>
 						<h3>Jammy</h3>
 						<p>Founders corporate</p>
 					</div>
 				</div>
 				<div className="col-sm-6 col-md-3">
 					<div className="pastor">
-						<div className="pastor-img set-bg" data-setbg="img/pastors/3.jpg"></div>
+					<img className="pastor-img set-bg" src="https://images.unsplash.com/photo-1520466809213-7b9a56adcd45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"/>
 						<h3>Artine Nguyen</h3>
 						<p>Member</p>
 					</div>
 				</div>
 				<div className="col-sm-6 col-md-3">
 					<div className="pastor">
-						<div className="pastor-img set-bg" data-setbg="img/pastors/4.jpg"></div>
+					<img className="pastor-img set-bg" src="https://images.unsplash.com/photo-1541418950054-c12804e149d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"/>
 						<h3>Hieu Nguyen</h3>
 						<p>Member</p>
 					</div>
@@ -87,7 +87,7 @@ export default function About() {
 		</div>
 	</section>
 
-	<Container className="newsletter-section">
+	{/* <Container className="newsletter-section">
 			<Row className="row">
 				<Col className="col-sm-12 col-md-7">
 					<h4>Subscribe And Tell Us Real Story About Your Journey</h4>
@@ -99,7 +99,8 @@ export default function About() {
 					</Form>
 				</Col>
 			</Row>
-		</Container>
+		</Container> */}
+		
 		</div>
 	)
 	}

@@ -62,7 +62,6 @@ export default function Post(props) {
                                 <div><p>{post.view_count}</p></div>
                             </div>
                         </div>
-                        variant="light"
                     </Col>
                     {props.currentUser && props.currentUser.id == post.user_id ? (<>
                         <Button onClick={() => deletePost(post.id)}>Delete</Button>
@@ -101,19 +100,19 @@ export default function Post(props) {
             {props.currentUser ? <> <Form onSubmit={(p) => handleSubmit(p)}>
                 <div className="col align-self-center">
                     <Form.Group md={12}>
-                        <Form.Label>Input Title</Form.Label>
+                        <Form.Label>Title</Form.Label>
                         <Form.Control className="input"
                             type="text"
                             onChange={(p) => setTitle(p.target.value)}
                         />
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label>Input body</Form.Label>
+                        <Form.Label>Content</Form.Label>
                         <Form.Control className="input" as="textarea" rows="10" type="text" onChange={(p) => setbody(p.target.value)}
                         />
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label>Input image URL</Form.Label>
+                        <Form.Label>Post Image</Form.Label>
                         <Form.Control className="input"
                             type="url"
                             onChange={(p) => setImg(p.target.value)}

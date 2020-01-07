@@ -149,61 +149,79 @@ export default function Event(props) {
                 <Form onSubmit={(e) => handleSubmit(e)}>
                     <Container>
                         <Form.Group>
-                            <Form.Label>Input Title</Form.Label>
+                            <Form.Label>What is your title?</Form.Label>
                             <Form.Control className="input"
                                 type="text"
                                 onChange={(e) => setTitle(e.target.value)}
                             />
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>Input body</Form.Label>
+                            <Form.Label> Body</Form.Label>
                             <Form.Control className="input" as="textarea" rows="5"
                                 type="text"
                                 onChange={(e) => setbody(e.target.value)}
                             />
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>Input image URL</Form.Label>
+                            <Form.Label> Image URL</Form.Label>
                             <Form.Control className="input"
                                 type="url"
                                 onChange={(e) => setImg(e.target.value)}
                             />
                         </Form.Group>
+                        <Row>
                         <Form.Group as={Col}>
-                            <Form.Label>Input year</Form.Label>
+                            <Form.Label> Year</Form.Label>
                             <Form.Control className="input"
+                            min="1980"
+                            max="2020"
                                 type="number"
                                 onChange={(e) => setYear(e.target.value)}
                             />
                         </Form.Group>
                         <Form.Group as={Col}>
-                            <Form.Label as={Col}>Input month</Form.Label>
+                            <Form.Label as={Col}>Month</Form.Label>
                             <Form.Control className="input"
                                 type="number"
+                                min="1"
+                                max="12"
                                 onChange={(e) => setMonth(e.target.value)}
                             />
                         </Form.Group>
                         <Form.Group as={Col}>
-                            <Form.Label >Input day</Form.Label>
+                            <Form.Label> Day</Form.Label>
                             <Form.Control className="input"
                                 type="number"
+                                min="1"
+                                max="31"
                                 onChange={(e) => setDay(e.target.value)}
                             />
                         </Form.Group>
+                        </Row>
+                        <Row>
+                        <div className="col-md-6">
                         <Form.Group>
-                            <Form.Label as={Col}>Input hour</Form.Label>
+                            <Form.Label>Hour</Form.Label>
                             <Form.Control className="input"
+                                                        min="0"
+                                                        max="23"
                                 type="number"
                                 onChange={(e) => setHour(e.target.value)}
                             />
                         </Form.Group>
+                        </div>
+                        <div className="col-md-6">
                         <Form.Group>
-                            <Form.Label as={Col}>Input Minutes</Form.Label>
+                            <Form.Label> Minutes</Form.Label>
                             <Form.Control className="input"
+                                                        min="0"
+                                                        max="60"
                                 type="number"
                                 onChange={(e) => setMinute(e.target.value)}
                             />
                         </Form.Group>
+                        </div>
+                        </Row>
                         <Form.Group>
                             <Form.Label as={Col}>Link Form</Form.Label>
                             <Form.Control className="input"
